@@ -256,11 +256,11 @@ Finish
 >> 
 ```
 
-![Fig.4(a)](/blob/master/plots/fig4a.png)
-![Fig.4(b)](./blob/master/plots/fig4b.png)
-![Fig.6(a)](blob/master/plots/fig6a.png)
+![Fig.4(a)](https://github.com/daobilige-su/obs-mic-array-calib/blob/master/plots/fig4a.png)
+![Fig.4(b)](https://github.com/daobilige-su/obs-mic-array-calib/blob/master/plots/fig4b.png)
+![Fig.6(a)](https://github.com/daobilige-su/obs-mic-array-calib/blob/master/plots/fig6a.png)
 ![Fig.6(b)](https://github.com/daobilige-su/obs-mic-array-calib/blob/master/plots/fig6b.png)
-![Fig.8(b)](github.com/daobilige-su/obs-mic-array-calib/blob/master/plots/fig8b.png)
+![Fig.8(b)](https://github.com/daobilige-su/obs-mic-array-calib/blob/master/plots/fig8b.png)
 
 ---
 
