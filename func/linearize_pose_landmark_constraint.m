@@ -10,7 +10,7 @@
 % B 2x2 Jacobian wrt l
 function [e, A, B] = linearize_pose_landmark_constraint(x, l, z, toIdx,est_delay_on,est_drift_on,g)
 
-  % TODO compute the error and the Jacobians of the error
+  % compute the error and the Jacobians of the error
    
   % error
   e = zeros(g.M-1,1);
@@ -29,7 +29,7 @@ function [e, A, B] = linearize_pose_landmark_constraint(x, l, z, toIdx,est_delay
                           (1/340)*((1/2)*(1/sqrt((l(5*n+1)-x(1))^2 + (l(5*n+2)-x(2))^2 + (l(5*n+3)-x(3))^2)) *(2*(l(5*n+2)-x(2)))),...
                           (1/340)*((1/2)*(1/sqrt((l(5*n+1)-x(1))^2 + (l(5*n+2)-x(2))^2 + (l(5*n+3)-x(3))^2)) *(2*(l(5*n+3)-x(3)))),...
                           1,...
-                          ((toIdx-5*g.M+2)/3);%*l(4*n+4);
+                          ((toIdx-5*g.M+2)/3);
                           
                           zeros(g.M-1-n,5)];
     % if no need to estimate drift, the jacobian is 0;

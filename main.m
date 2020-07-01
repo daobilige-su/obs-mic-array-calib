@@ -4,7 +4,7 @@ close all;
 clc;
 
 %% add path for including some tool functions
-addpath('tools');
+addpath('func');
 
 %% params
 
@@ -157,12 +157,14 @@ disp('==================================================================');
 disp('C. Impact of eigenvalues of FIM on observability and convergence'); 
 disp('of the system');
 disp(' ');
+disp('Check plotting of Fig.6(b) below.');
+disp(' ');
 
 %% experimental results in section VII
 disp('==================================================================');
 disp('VII. EXPERIMENTAL RESULTS');
 disp(' ');
-
+% 
 % Fig.8(a)
 disp('------------------------------------------------------------------');
 disp('Fig.8(a)');
@@ -182,6 +184,8 @@ disp('');
 disp('------------------------------------------------------------------');
 disp('Fig.8(b)');
 disp('----------');
+disp('This step will take a while (up to 1 min), please be patient ...');
+disp(' ');
 fig8b.eqn.ss_idx = [1,30,50,70, 130];
 fig8b.eqn.o_r = [3, 3, 5];
 fig8b.eqn.o_k = [1, 4, 50];
@@ -193,10 +197,63 @@ fig8b.eqn.type = 1;
 observability_analysis_func(fig8b);
 disp('');
 
+%% figures in Fig.4, Fig.5, Fig.6 and Fig.8
+disp('==================================================================');
+disp('Plotting figures in Fig.4, Fig.6 and Fig.8');
+disp(' ');
 
+% Fig.4(a)
+disp('------------------------------------------------------------------');
+disp('Plot Fig.4(a) in Fig. 1.');
+fig4a.eps = 1e-2;
+fig4a.fig.title = 'Fig.4(a)';
+fig4a.fig.view_a = 30; fig4a.fig.view_e = 15;
 
+calib_func(fig4a);
+pause(0.5);
 
+% Fig.4(b)
+disp('------------------------------------------------------------------');
+disp('Plot Fig.4(b) in Fig. 2.');
+fig4b.eps = 1e-2;
+fig4b.fig.title = 'Fig.4(b)';
+fig4b.fig.view_a = 30; fig4b.fig.view_e = 15;
 
+calib_func(fig4b);
+pause(0.5);
+
+% Fig.6(a)
+disp('------------------------------------------------------------------');
+disp('Plot Fig.6(a) in Fig. 3.');
+fig6a.eps = 1e-2;
+fig6a.fig.title = 'Fig.6(a)';
+fig6a.fig.view_a = 30; fig6a.fig.view_e = 15;
+
+calib_func(fig6a);
+pause(0.5);
+
+% Fig.6(b)
+disp('------------------------------------------------------------------');
+disp('Plot Fig.6(b) in Fig. 4.');
+fig4b.fig.legend = 'cir+ver'; fig6a.fig.legend = 'cir';
+fim_eigs(fig4b, fig6a); title('Fig.6(b)');
+pause(0.5);
+
+% Fig.8(b)
+disp('------------------------------------------------------------------');
+disp('Plot Fig.8(b) in Fig. 5.');
+fig8b.eps = 1.5;
+fig8b.fig.title = 'Fig.8(b)';
+fig8b.fig.view_a = 61.1418; fig8b.fig.view_e = 47.4000;
+
+calib_func(fig8b);
+pause(0.5);
+
+%% All done
+disp('==================================================================');
+disp('Finish');
+disp(' ');
+disp('==================================================================');
 
 
 

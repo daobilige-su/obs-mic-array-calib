@@ -12,7 +12,6 @@ b = zeros(length(g.x), 1);
 needToAddPrior = true;
 
 % compute the addend term to H and b for each of our constraints
-disp('linearize and build system');
 for eid = 1:length(g.edges)
   edge = g.edges(eid);
 
@@ -62,7 +61,7 @@ for eid = 1:length(g.edges)
     [e, A, B] = linearize_pose_landmark_constraint(x1, x2, edge.measurement,edge.toIdx,est_delay_on,est_drift_on,g);
     
     
-    % TODO: compute and add the term to H and b
+    % compute and add the term to H and b
     b(edge.fromIdx:edge.fromIdx+(5*g.M-1)) = (b(edge.fromIdx:edge.fromIdx+(5*g.M-1))' + (e')*edge.information*A)';
     b(edge.toIdx:edge.toIdx+2) = (b(edge.toIdx:edge.toIdx+2)' + (e')*edge.information*B)';
 
@@ -75,7 +74,7 @@ for eid = 1:length(g.edges)
 end
 
 if (needToAddPrior)
-  % TODO: add the prior for one pose of this edge
+  % add the prior for one pose of this edge
   % This fixes one node to remain at its current location
 
   % 1st mic
@@ -113,13 +112,9 @@ if (needToAddPrior)
           H(5*(n-1)+4,5*(n-1)+4)=1;
       end
   end
-
-  %needToAddPrior = false;
 end
 
-disp('solving system');
-
-% TODO: solve the linear system, whereas the solution should be stored in dx
+% solve the linear system, whereas the solution should be stored in dx
 % Remember to use the backslash operator instead of inverting H
 
 dx = H\(-b);
