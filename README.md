@@ -1,8 +1,8 @@
-# Necessary and Sufficient Conditions for Observability of SLAM-based Microphone Array Calibration and Sound Source Localization
+# Necessary and Sufficient Conditions for Observability of SLAM-Based TDOA Sensor Array Calibration and Source Localization
 
 This is supplementary code for our paper 
 ```
-Daobilige Su, He Kong, Salah Sukkarieh, Shoudong Huang, “Necessary and Sufficient Conditions for Observability of SLAM-based Microphone Array Calibration and Sound Source Localization”.
+Daobilige Su, He Kong, Salah Sukkarieh, Shoudong Huang, “Necessary and Sufficient Conditions for Observability of SLAM-Based TDOA Sensor Array Calibration and Source Localization”.
 ```
 
 ---
